@@ -13,8 +13,8 @@
  */
 
 // ── CONFIGURACIÓN ──────────────────────────────────────────
-const SUPABASE_URL  = 'https://kartoonberg-cumbregear.supabase.co';   // ← cambia esto
-const SUPABASE_ANON = 'pfnzvbslhpfvzkuojrrq';                       // ← cambia esto
+const SUPABASE_URL  = 'https://pfnzvbslhpfvzkuojrrq.supabase.co';   // ← cambia esto
+const SUPABASE_ANON = 'sb_publishable_frX2QrrtTYXRUx0vqQwpTg_UhfFWy4h';                       // ← cambia esto
 const AFFILIATE_TAG = 'TU-TAG-AFILIADO';                    // ← cambia esto
 
 // ── CLIENTE SUPABASE (sin SDK, fetch nativo) ───────────────
