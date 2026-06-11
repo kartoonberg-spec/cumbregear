@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="iBtfebidlWBjLtmsQa7o_DCgYIqZ2jB5p8AhqTZEDW8" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CumbreGear — Equipamiento de Senderismo y Montaña</title>
 <meta name="description" content="Guía experta de equipamiento para senderismo y montaña. Análisis honestos, comparativas reales y los mejores productos probados en ruta.">
@@ -498,7 +497,8 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
   <div class="container">
     <h2 class="nl-title">La montaña espera. Tu equipo, también.</h2>
     <p class="nl-sub">Análisis de producto, ofertas y rutas nuevas cada semana en tu bandeja de entrada.</p>
-    <div class="nl-form"><input class="nl-input" type="email" placeholder="tucorreo@email.com"><button class="nl-btn">Suscribirme gratis</button></div>
+    <div class="nl-form"><input class="nl-input" type="email" id="nlEmail" placeholder="tucorreo@email.com"><button class="nl-btn" id="nlBtn">Suscribirme gratis</button></div>
+    <p id="nlMsg"></p>
     <p class="nl-note">📥 Checklist del senderista gratis · Sin spam · Baja cuando quieras</p>
   </div>
 </section>
@@ -514,7 +514,7 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
     <div class="footer-col"><h5>Contenido</h5><ul><li><a href="#" onclick="navScroll('guias');return false">Guías de compra</a></li><li><a href="#" onclick="navScroll('guias');return false">Comparativas</a></li><li><a href="#" onclick="navScroll('rutas');return false">Rutas de montaña</a></li><li><a href="#" onclick="openArticle('nosotros');return false">Sobre nosotros</a></li></ul></div>
     <div class="footer-col"><h5>Legal</h5><ul><li><a href="#" onclick="openArticle('nosotros');return false">Sobre nosotros</a></li><li><a href="#" onclick="openArticle('afiliados');return false">Aviso de afiliados</a></li><li><a href="#" onclick="openArticle('privacidad');return false">Política de privacidad</a></li><li><a href="#" onclick="openArticle('legal');return false">Aviso legal</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><div class="container"><span class="aff-note">Participante en el Programa de Afiliados de Amazon EU — Las compras a través de nuestros enlaces generan una pequeña comisión sin coste adicional para ti</span><br>© 2025 CumbreGear · Todos los derechos reservados</div></div>
+  <div class="footer-bottom"><div class="container"><span class="aff-note">Participante en el Programa de Afiliados de Amazon EU — Las compras a través de nuestros enlaces generan una pequeña comisión sin coste adicional para ti</span><br>© <span id="footerYear">2025</span> CumbreGear · Todos los derechos reservados</div></div>
 </footer>
 
 <!-- MODAL -->
@@ -966,5 +966,6 @@ function closeArticle(){
 function closeOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeArticle();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeArticle();});
 </script>
+<script src="supabase-cumbregear.js"></script>
 </body>
 </html>
