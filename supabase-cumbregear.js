@@ -43,7 +43,7 @@ const sb = {
         'apikey': SUPABASE_ANON,
         'Authorization': `Bearer ${SUPABASE_ANON}`,
         'Content-Type': 'application/json',
-        'Prefer': 'return=representation',
+        'Prefer': 'return=minimal',
       },
       body: JSON.stringify(data),
     });
