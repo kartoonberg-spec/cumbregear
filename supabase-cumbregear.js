@@ -107,7 +107,7 @@ async function suscribirNewsletter() {
     if (typeof gtag !== 'undefined') gtag('event', 'newsletter_signup');
   } catch (err) {
     // Código 23505 = email duplicado en Postgres
-    if (err.message?.includes('duplicate') || err.message?.includes('23505')) {
+    if (err.message?.includes('duplicate') || err.message?.includes('23505') || err.message?.includes('409')) {
       showNlMsg('📧 Ya estás suscrito con ese email.', 'info');
     } else {
       showNlMsg('❌ Error al suscribirse. Inténtalo de nuevo.', 'error');
