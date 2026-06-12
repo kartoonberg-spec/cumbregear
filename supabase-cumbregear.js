@@ -55,18 +55,25 @@ const sb = {
   },
 
   async rpc(fn, params = {}) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${table}`, {
       method: 'POST',
       headers: {
         'apikey': SUPABASE_ANON,
         'Authorization': `Bearer ${SUPABASE_ANON}`,
         'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
       },
-      body: JSON.stringify(params),
+      body: JSON.stringify(data),
     });
-    if (!res.ok) throw new Error(`RPC error: ${res.status}`);
-    return res.json();
+    if (!res.ok) {
+      let errMsg = `Insert error: ${res.status}`;
+    try {
+      const err = await res.json();
+      errMsg = err.message || err.error || errMsg;
+    } catch (_) {}
+    throw new Error(errMsg);
   }
+    return {};
 };
 
 
