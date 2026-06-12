@@ -14,7 +14,7 @@
 
 // ── CONFIGURACIÓN ──────────────────────────────────────────
 const SUPABASE_URL  = 'https://pfnzvbslhpfvzkuojrrq.supabase.co';   // ← cambia esto
-const SUPABASE_ANON = 'sb_publishable_frX2QrrtTYXRUx0vqQwpTg_UhfFWy4h';                       // ← cambia esto
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmbnp2YnNsaHBmdnprdW9qcnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMDgwMTksImV4cCI6MjA5Njc4NDAxOX0.5JRCnCLVvdXMYvxRAUgVycX7pYzEsTuFsiSDW3TWQVQ';                       // ← cambia esto
 const AFFILIATE_TAG = 'TU-TAG-AFILIADO';                    // ← cambia esto
 
 // ── CLIENTE SUPABASE (sin SDK, fetch nativo) ───────────────
