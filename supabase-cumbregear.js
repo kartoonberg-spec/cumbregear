@@ -13,6 +13,12 @@
  */
 
 // ── CONFIGURACIÓN ──────────────────────────────────────────
+import { createClient } from '@supabase/supabase-js'
+
+export const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+)
 const SUPABASE_URL  = 'https://pfnzvbslhpfvzkuojrrq.supabase.co';   // ← cambia esto
 const SUPABASE_ANON = 'sb_publishable_frX2QrrtTYXRUx0vqQwpTg_UhfFWy4h';                       // ← cambia esto
 const AFFILIATE_TAG = 'TU-TAG-AFILIADO';                    // ← cambia esto
