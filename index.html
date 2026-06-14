@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CumbreGear — Equipamiento de Senderismo y Montaña</title>
-<link rel="canonical" href="https://kartoonberg-spec.github.io/cumbregear/">
 <meta name="description" content="Guía experta de equipamiento para senderismo y montaña. Análisis honestos, comparativas reales y los mejores productos probados en ruta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -300,15 +299,6 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
   .nl-form{flex-direction:column}
   .checklist{grid-template-columns:1fr}
 }
-
-/* Fix: imágenes dentro de cards bien contenidas */
-.hero-card img, .article-card img, .ruta-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 </style>
 </head>
 <body>
@@ -962,9 +952,22 @@ document.querySelectorAll('.cat-item').forEach(el=>{el.addEventListener('click',
 
 // Modal
 function openArticle(key){
-  var urls={"botas": "botas/", "mochilas": "mochilas/", "gps": "relojes-gps/", "calzado_principiantes": "botas/principiantes/", "longtail_camino": "guias/camino-de-santiago/", "botiquin": "guias/botiquin-montana/", "elegir_botas": "guias/elegir-botas-trekking/", "que_llevar": "guias/que-llevar-ruta-montana/", "ruta_aneto": "rutas/aneto/", "ruta_europa": "rutas/picos-de-europa/", "ruta_mulhacen": "rutas/mulhacen/", "ruta_montserrat": "rutas/montserrat/", "ruta_ordesa": "rutas/ordesa/"};
-  if(urls[key]){window.location.href=urls[key];return;}
-  
+  const urls = {
+  "botas": "botas/",
+  "mochilas": "mochilas/",
+  "gps": "relojes-gps/",
+  "calzado_principiantes": "botas/principiantes/",
+  "longtail_camino": "guias/camino-de-santiago/",
+  "botiquin": "guias/botiquin-montana/",
+  "elegir_botas": "guias/elegir-botas-trekking/",
+  "que_llevar": "guias/que-llevar-ruta-montana/",
+  "ruta_aneto": "rutas/aneto/",
+  "ruta_europa": "rutas/picos-de-europa/",
+  "ruta_mulhacen": "rutas/mulhacen/",
+  "ruta_montserrat": "rutas/montserrat/",
+  "ruta_ordesa": "rutas/ordesa/"
+};
+  if(urls[key]){ window.location.href = urls[key]; return; }
   const tpl=document.getElementById(articles[key]);
   if(!tpl)return;
   document.getElementById('modalContent').innerHTML=tpl.innerHTML;
