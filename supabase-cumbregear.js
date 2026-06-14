@@ -14,7 +14,7 @@
 
 // ── CONFIGURACIÓN ──────────────────────────────────────────
 const SUPABASE_URL  = 'https://pfnzvbslhpfvzkuojrrq.supabase.co';   // ← cambia esto
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmbnp2YnNsaHBmdnprdW9qcnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMDgwMTksImV4cCI6MjA5Njc4NDAxOX0.5JRCnCLVvdXMYvxRAUgVycX7pYzEsTuFsiSDW3TWQVQ';                       // ← cambia esto
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmbnp2YnNsaHBmdnprdW9qcnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMDgwMTksImV4cCI6MjA5Njc4NDAxOX0.5JRCnCLV';
 const AFFILIATE_TAG = 'TU-TAG-AFILIADO';                    // ← cambia esto
 
 // ── CLIENTE SUPABASE (sin SDK, fetch nativo) ───────────────
@@ -55,25 +55,26 @@ const sb = {
   },
 
   async rpc(fn, params = {}) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${table}`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
       method: 'POST',
       headers: {
         'apikey': SUPABASE_ANON,
         'Authorization': `Bearer ${SUPABASE_ANON}`,
         'Content-Type': 'application/json',
-        'Prefer': 'return=minimal'
+        'Prefer': 'return=representation'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(params),
     });
     if (!res.ok) {
-      let errMsg = `Insert error: ${res.status}`;
-    try {
-      const err = await res.json();
-      errMsg = err.message || err.error || errMsg;
-    } catch (_) {}
-    throw new Error(errMsg);
+      let errMsg = `RPC error: ${res.status}`;
+      try {
+        const err = await res.json();
+        errMsg = err.message || err.error || errMsg;
+      } catch (_) {}
+      throw new Error(errMsg);
+    }
+    return res.json();
   }
-    return {};
 };
 
 
@@ -143,13 +144,6 @@ async function registrarVisita(articuloKey) {
     console.warn('[Visitas]', err);
   }
 }
-
-// Hook: inyectar en la función openArticle existente
-const _openArticleOriginal = window.openArticle;
-window.openArticle = function(key) {
-  _openArticleOriginal(key);
-  registrarVisita(key);
-};
 
 
 // ══════════════════════════════════════════════════════════
@@ -226,14 +220,6 @@ function mostrarAvgMsg(slug, texto) {
   if (el) el.textContent = texto;
 }
 
-// Hook en openArticle para inyectar widget después del template
-const _openArticle2 = window.openArticle;
-window.openArticle = function(key) {
-  _openArticle2(key);
-  // Esperar al siguiente tick para que el innerHTML ya esté insertado
-  requestAnimationFrame(() => inyectarWidgetValoracion(key));
-};
-
 
 // ══════════════════════════════════════════════════════════
 //  4. TAG DE AFILIADO CENTRALIZADO
@@ -251,24 +237,17 @@ function normalizarTagsAfiliado() {
   });
 }
 
-// Ejecutar en cada apertura de modal (los templates cargan dinámicamente)
-const _openArticle3 = window.openArticle;
-window.openArticle = function(key) {
-  _openArticle3(key);
-  requestAnimationFrame(normalizarTagsAfiliado);
-};
-
 
 // ══════════════════════════════════════════════════════════
 //  5. BUSCADOR MEJORADO — busca sobre estructura de datos real
-// ══════════════════════════════════════════════════════════
+// ══════════════════════════════���═══════════════════════════
 
 // Datos estructurados extraídos del HTML original
 const DB_ARTICULOS = [
   { key:'botas',                cats:['guia','calzado'],         titulo:'Las 10 mejores botas de trekking de 2026', keywords:['bota','botas','calzado','salomon','scarpa','merrell','trekking'] },
   { key:'mochilas',             cats:['comparativa','mochilas'], titulo:'Osprey Atmos vs Deuter Aircontact',        keywords:['mochila','mochilas','osprey','deuter','atmos','aircontact','trekking'] },
   { key:'gps',                  cats:['comparativa','gps'],      titulo:'Garmin Fenix 8 vs Suunto Race',           keywords:['gps','garmin','suunto','reloj','fenix','race','navegacion'] },
-  { key:'calzado_principiantes',cats:['longtail','calzado'],     titulo:'Mejor bota para principiantes -100€',     keywords:['principiante','principiantes','barato','economico','100','merrell','moab'] },
+  { key:'calzado_principiantes',cats:['longtail','calzado'],     titulo:'Mejor bota para principiantes -100€',     keywords:['principiante','principiantes','barato','economico','100','merrell'] },
   { key:'longtail_camino',      cats:['longtail'],               titulo:'Qué llevar al Camino de Santiago',        keywords:['camino','santiago','peregrino','equipamiento','lista'] },
   { key:'botiquin',             cats:['guia','seguridad'],       titulo:'Botiquín de primeros auxilios',           keywords:['botiquin','primeros auxilios','seguridad','emergencia','compeed'] },
   { key:'elegir_botas',         cats:['guia','calzado'],         titulo:'Cómo elegir botas de montaña',            keywords:['elegir','elegir botas','guia','como','membranas','gore-tex'] },
@@ -338,6 +317,26 @@ function mostrarResultadosBusqueda(q, resultados) {
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
+
+// ══════════════════════════════════════════════════════════
+//  CONSOLIDATED HOOK — Single openArticle wrapper
+//  Handles: visit tracking + rating widget + affiliate tags
+// ══════════════════════════════════════════════════════════
+
+const _openArticleOriginal = window.openArticle;
+window.openArticle = function(key) {
+  _openArticleOriginal(key);
+  
+  // 1. Track visit to article
+  registrarVisita(key);
+  
+  // 2. Inject rating widget and normalize affiliate tags on next animation frame
+  requestAnimationFrame(() => {
+    inyectarWidgetValoracion(key);
+    normalizarTagsAfiliado();
+  });
+};
 
 
 // ══════════════════════════════════════════════════════════
