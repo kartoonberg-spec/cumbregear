@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faja de Pelay — Ordesa, la ruta más espectacular del Pirineo | CumbreGear</title>
+<meta name="description" content="Guía completa de la Faja de Pelay en el Parque Nacional de Ordesa. 18 km, media dificultad, vistas únicas del cañón. Ficha técnica y consejos.">
+<link rel="canonical" href="https://cumbregear.es/rutas/ordesa/">
+<meta property="og:title" content="Faja de Pelay — Ordesa, la ruta más espectacular del Pirineo | CumbreGear">
+<meta property="og:description" content="Guía completa de la Faja de Pelay en el Parque Nacional de Ordesa. 18 km, media dificultad, vistas únicas del cañón. Ficha técnica y consejos.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://cumbregear.es/rutas/ordesa/">
+<meta property="og:image" content="https://cumbregear.es/img/paisajes/ordesa.jpg">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2D6A4F;--green-dark:#1a3d2e;--green-light:#EAF3DE;
+  --orange:#E07B39;--orange-light:#FFF3E8;--bg:#F9F7F4;
+  --white:#fff;--text:#1C1C1E;--muted:#6B7280;--border:#E5E0D8;
+  --radius:10px;--radius-sm:7px;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:1140px;margin:0 auto;padding:0 1rem}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:9px 18px;border-radius:var(--radius-sm);font-size:.82rem;font-weight:600;border:none;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:#c96b2a}
+.tag{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px}
+.tag-white{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.25)}
+nav{background:rgba(18,26,18,.97);position:sticky;top:0;z-index:200}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:52px;gap:.75rem}
+.logo{font-family:var(--serif);font-size:1.1rem;color:#fff}.logo span{color:var(--orange)}
+.nav-links{display:flex;list-style:none;gap:1.25rem}
+.nav-links a{font-size:.76rem;font-weight:500;color:rgba(255,255,255,.68)}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:.6rem 0;font-size:.75rem;color:var(--muted)}
+.breadcrumb a{color:var(--green)}.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 .35rem}
+.art-hero{position:relative;height:420px;overflow:hidden}
+.art-hero img{width:100%;height:100%;object-fit:cover}
+.art-hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%)}
+.art-hero-text{position:absolute;bottom:1.75rem;left:1.5rem;right:1.5rem}
+.art-hero-text h1{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.2rem);color:#fff;line-height:1.2;margin-top:.5rem}
+.art-hero-text p{color:rgba(255,255,255,.8);font-size:.83rem;margin-top:.4rem}
+.art-body{max-width:800px;margin:0 auto;padding:2rem 1rem 3rem}
+.art-body h2{font-family:var(--serif);font-size:1.2rem;margin:2rem 0 .75rem;color:var(--green-dark)}
+.art-body h3{font-size:.95rem;font-weight:600;margin:1.25rem 0 .5rem;color:#222}
+.art-body p{margin-bottom:1rem;color:#333}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;color:var(--green);font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.back-btn:hover{text-decoration:underline}
+/* Ficha técnica */
+.ruta-ficha{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:.5rem 0 1.5rem}
+.ruta-ficha-head{background:var(--green);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.5px;padding:.55rem 1rem}
+.ruta-ficha-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.ruta-ficha-cell{padding:.6rem .85rem;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.ruta-ficha-cell:nth-child(3n){border-right:none}
+.rfc-label{font-size:.65rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.15rem}
+.rfc-val{font-size:.88rem;font-weight:600}
+.diff{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px}
+.diff-easy{background:#d1fae5;color:#065f46}
+.diff-med{background:#fef3c7;color:#92400e}
+.diff-hard{background:#fee2e2;color:#991b1b}
+/* Winner box */
+.winner-box{display:flex;align-items:flex-start;gap:.85rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin:.75rem 0;box-shadow:var(--shadow)}
+.wb-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.wb-g{background:var(--green-light)}.wb-o{background:var(--orange-light)}.wb-b{background:#EEF4FF}
+.wb-info{flex:1}.wb-info strong{display:block;font-size:.88rem;margin-bottom:.2rem}
+.wb-info span{font-size:.78rem;color:var(--muted)}
+.wb-btn{background:var(--orange);color:#fff;border:none;border-radius:var(--radius-sm);padding:6px 14px;font-size:.76rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.wb-btn:hover{background:#c96b2a}
+/* Checklist */
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:1rem 0}
+.checklist-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.55rem .75rem;font-size:.82rem}
+/* Tip */
+.tip{background:#fffbeb;border-left:3px solid #f59e0b;padding:.7rem .9rem;border-radius:var(--radius-sm);font-size:.82rem;margin:1rem 0}
+/* FAQ */
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin:.6rem 0;overflow:hidden}
+.faq-q{padding:.75rem 1rem;font-weight:600;font-size:.84rem;background:var(--white)}
+.faq-a{padding:.6rem 1rem .75rem;font-size:.82rem;color:#444;border-top:1px solid var(--border)}
+/* Verdict */
+.verdict{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;border-radius:var(--radius);padding:1.25rem;margin:1.5rem 0}
+.verdict h3{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem}
+.verdict p{font-size:.84rem;opacity:.92}
+.verdict a.btn{margin-top:.85rem}
+/* Rutas relacionadas */
+.rutas-rel{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.25rem 0}
+.ruta-rel-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.ruta-rel-card:hover{transform:translateY(-2px);transition:.2s}
+.ruta-rel-card img{width:100%;height:110px;object-fit:cover}
+.ruta-rel-body{padding:.65rem .85rem}
+.ruta-rel-body strong{font-size:.82rem;display:block;margin-bottom:.15rem}
+.ruta-rel-body span{font-size:.72rem;color:var(--muted)}
+footer{background:#111;color:rgba(255,255,255,.6);font-size:.75rem;padding:2rem 0;text-align:center;margin-top:3rem}
+footer a{color:rgba(255,255,255,.5)}
+.footer-note{margin-top:.5rem;font-size:.7rem;opacity:.6}
+@media(max-width:640px){
+  .art-hero{height:260px}
+  .checklist{grid-template-columns:1fr}
+  .rutas-rel{grid-template-columns:1fr}
+  .ruta-ficha-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Faja de Pelay — Ordesa y Monte Perdido, la ruta más espectacular del Pirineo", "description": "Guía completa de la Faja de Pelay en el Parque Nacional de Ordesa. 18 km, media, con las mejores vistas del Pirineo. Ficha técnica y consejos.", "image": "https://cumbregear.es/img/paisajes/ordesa.jpg", "author": {"@type": "Person", "name": "Marcos Vidal"}, "publisher": {"@type": "Organization", "name": "CumbreGear"}, "dateModified": "2026-06-14"}</script>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">Cumbre<span>Gear</span></a>
+    <ul class="nav-links">
+      <li><a href="/#productos">Equipamiento</a></li>
+      <li><a href="/#guias">Guías</a></li>
+      <li><a href="/#comparativas">Comparativas</a></li>
+      <li><a href="/#rutas" class="active">Rutas</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb"><div class="container"><a href="/">CumbreGear</a> <span>›</span> <a href="/#rutas">Rutas</a> <span>›</span> <strong>Ordesa — Faja de Pelay</strong></div></div>
+<div class="art-hero">
+  <img src="/img/paisajes/ordesa.jpg" alt="Faja de Pelay Ordesa Monte Perdido — CumbreGear" loading="eager">
+  <div class="art-hero-ov"></div>
+  <div class="art-hero-text">
+    <span class="tag tag-white">🏞 ORDESA · MEDIA · PIRINEO ARAGONÉS</span>
+    <h1>Faja de Pelay — La ruta más espectacular del Pirineo</h1>
+    <p>18 km · 900m desnivel · 6–8 horas · Junio a Octubre</p>
+  </div>
+</div>
+<div class="art-body">
+  <a href="/#rutas" class="back-btn">← Volver a rutas</a>
+  
+<div class="ruta-ficha">
+  <div class="ruta-ficha-head">📋 Ficha técnica</div>
+  <div class="ruta-ficha-grid">
+    <div class="ruta-ficha-cell"><div class="rfc-label">Distancia</div><div class="rfc-val">18 km</div></div>
+    <div class="ruta-ficha-cell"><div class="rfc-label">Desnivel</div><div class="rfc-val">900 m</div></div>
+    <div class="ruta-ficha-cell"><div class="rfc-label">Duración</div><div class="rfc-val">6–8 h</div></div>
+    <div class="ruta-ficha-cell"><div class="rfc-label">Dificultad</div><div class="rfc-val"><span class="diff diff-med">Media</span></div></div>
+    <div class="ruta-ficha-cell"><div class="rfc-label">Altitud máx.</div><div class="rfc-val">1.890 m</div></div>
+    <div class="ruta-ficha-cell"><div class="rfc-label">Temporada</div><div class="rfc-val">Jun–Oct</div></div>
+  </div>
+</div>
+<p>La Faja de Pelay es, sin exageración, una de las rutas más impresionantes de España. Recorre en horizontal la pared norte del Cañón de Ordesa con vistas verticales de 600 metros sobre el fondo del valle. Un sendero único que requiere algo de experiencia pero que recompensa con creces el esfuerzo.</p>
+<h2>Descripción de la ruta</h2>
+<h3>Tramo 1 — Pradera de Ordesa → Cascada de Arripas (1h)</h3>
+<p>Desde la Pradera de Ordesa (1.320m), sigue el fondo del cañón por el Camino de los Cazadores hasta la Cascada de Arripas. El bosque de hayas y abetos del fondo del valle es espectacular en otoño.</p>
+<h3>Tramo 2 — Ascenso a la Faja (1h 30min)</h3>
+<p>El tramo más exigente: ascenso por el Camino de los Cazadores con fuerte pendiente hasta alcanzar la Faja de Pelay (1.890m). Una vez arriba, el paisaje cambia radicalmente: vista cenital sobre todo el cañón.</p>
+<h3>Tramo 3 — Recorrido de la Faja (2h)</h3>
+<p>El corazón de la ruta. El sendero horizontal recorre la pared del cañón con vistas constantes sobre el valle y las Tres Sorores al fondo. Algunos tramos son aéreos pero el camino está siempre bien marcado.</p>
+<h3>Tramo 4 — Descenso por el Circo de Soaso (1h 30min)</h3>
+<p>Bajada por el Circo de Soaso pasando junto a la Cola de Caballo, la cascada más famosa del Pirineo. Vuelta al valle por el fondo del cañón cerrando el circuito en la Pradera de Ordesa.</p>
+<div class="tip">💡 En julio y agosto el acceso en coche a la Pradera de Ordesa está restringido. El autobús lanzadera desde Torla-Ordesa es obligatorio. Sale desde las 6h y el billete debe comprarse online con antelación.</div>
+<h2>Equipamiento recomendado</h2>
+<div class="winner-box"><div class="wb-icon wb-g">🥾</div><div class="wb-info"><strong>Salomon X Ultra Pioneer GTX — recomendada para la Faja</strong><span>Agarre Contagrip excepcional en roca mojada · Desde 99€</span></div><a href="https://www.amazon.es/s?k=Salomon+X+Ultra+Pioneer+GTX" rel="sponsored noopener" target="_blank"><button class="wb-btn">Ver en Amazon →</button></a></div>
+<div class="checklist">
+  <div class="checklist-item">🥾 Botas con agarre alto en roca mojada</div>
+  <div class="checklist-item">🧥 Chubasquero ligero</div>
+  <div class="checklist-item">💧 Agua 2.5L mínimo</div>
+  <div class="checklist-item">🍫 Comida para todo el día</div>
+  <div class="checklist-item">🌡 Manta de emergencia</div>
+  <div class="checklist-item">🧭 GPS con ruta cargada</div>
+  <div class="checklist-item">🔦 Linterna (por si el descenso se alarga)</div>
+  <div class="checklist-item">🩹 Botiquín básico</div>
+</div>
+<h2>Preguntas frecuentes</h2>
+<div class="faq-item"><div class="faq-q">¿Es apta para senderistas sin experiencia?</div><div class="faq-a">Requiere cierta experiencia y no tener vértigo moderado-alto: algunos tramos de la Faja son aéreos aunque sin peligro real con calzado adecuado. Para tu primera ruta de montaña, mejor elige los Lagos de Covadonga o Montserrat y vuelve al año siguiente.</div></div>
+<div class="faq-item"><div class="faq-q">¿Se puede hacer en sentido contrario?</div><div class="faq-a">Sí, hay quien prefiere subir por el Circo de Soaso y recorrer la Faja en el sentido inverso. El paisaje es el mismo, pero las vistas durante la Faja cambian ligeramente de perspectiva.</div></div>
+<div class="faq-item"><div class="faq-q">¿Qué animales puedo ver en Ordesa?</div><div class="faq-a">El sarrio (rebeco pirenaico) es el más habitual en la Faja. También quebrantahuesos, buitres leonados, marmotas y ocasionalmente el oso pardo. En el fondo del valle hay truchas en el río Arazas.</div></div>
+<div class="verdict"><h3>🏞 Valoración CumbreGear</h3><p>La Faja de Pelay es, sin exageración, una de las rutas más impresionantes de España. Si solo puedes hacer una ruta en el Pirineo este año, que sea esta.</p><a href="/#rutas" class="btn btn-primary">Ver más rutas →</a></div>
+<h2>Rutas relacionadas</h2>
+<div class="rutas-rel">
+  <a class="ruta-rel-card" href="/rutas/aneto/"><img src="/img/paisajes/picoaneto.jpg" alt="Aneto"><div class="ruta-rel-body"><strong>Pico Aneto (3.404m)</strong><span>Pirineo Aragonés · Media-Alta</span></div></a>
+  <a class="ruta-rel-card" href="/rutas/mulhacen/"><img src="/img/paisajes/mulhacen.jpg" alt="Mulhacén"><div class="ruta-rel-body"><strong>Mulhacén (3.479m)</strong><span>Sierra Nevada · Difícil</span></div></a>
+</div>
+</div>
+<footer>
+  <div class="container">
+    <p><a href="/">CumbreGear</a> · <a href="/nosotros/">Sobre nosotros</a> · <a href="/privacidad/">Privacidad</a> · <a href="/legal/">Aviso legal</a></p>
+    <p class="footer-note">Participante en el Programa de Afiliados de Amazon EU — Las compras a través de nuestros enlaces generan una pequeña comisión sin coste adicional para ti<br>© 2026 CumbreGear · Todos los derechos reservados</p>
+  </div>
+</footer>
+</body>
+</html>
