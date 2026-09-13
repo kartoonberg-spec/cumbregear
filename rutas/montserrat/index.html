@@ -25,9 +25,10 @@
   --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
+:focus-visible{outline:3px solid #f3a66f;outline-offset:3px}
 .container{max-width:1140px;margin:0 auto;padding:0 1rem}
 .btn{display:inline-flex;align-items:center;gap:5px;padding:9px 18px;border-radius:var(--radius-sm);font-size:.82rem;font-weight:600;border:none;cursor:pointer}
 .btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:#c96b2a}
@@ -84,9 +85,9 @@ nav{background:rgba(18,26,18,.97);position:sticky;top:0;z-index:200}
 .faq-q{padding:.75rem 1rem;font-weight:600;font-size:.84rem;background:var(--white)}
 .faq-a{padding:.6rem 1rem .75rem;font-size:.82rem;color:#444;border-top:1px solid var(--border)}
 /* Verdict */
-.verdict{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;border-radius:var(--radius);padding:1.25rem;margin:1.5rem 0}
-.verdict h3{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem}
-.verdict p{font-size:.84rem;opacity:.92}
+.verdict{background:var(--white);color:var(--text);border:1px solid var(--border);border-left:5px solid var(--orange);border-radius:var(--radius);padding:1.25rem;margin:1.5rem 0;box-shadow:var(--shadow)}
+.verdict h3{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem;color:var(--green-dark)}
+.verdict p{font-size:.9rem;color:#333;opacity:1}
 .verdict a.btn{margin-top:.85rem}
 /* Rutas relacionadas */
 .rutas-rel{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.25rem 0}
@@ -100,13 +101,16 @@ footer{background:#111;color:rgba(255,255,255,.6);font-size:.75rem;padding:2rem 
 footer a{color:rgba(255,255,255,.5)}
 .footer-note{margin-top:.5rem;font-size:.7rem;opacity:.6}
 @media(max-width:640px){
+  .nav-inner{height:auto;flex-direction:column;align-items:flex-start;padding-top:.55rem;padding-bottom:.55rem}
+  .nav-links{width:100%;justify-content:space-between;gap:.5rem;overflow-x:auto}
+  .nav-links a{font-size:.72rem;white-space:nowrap}
   .art-hero{height:260px}
   .checklist{grid-template-columns:1fr}
   .rutas-rel{grid-template-columns:1fr}
   .ruta-ficha-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Montserrat — Ruta Sant Joan y Creu de Sant Miquel", "description": "Ruta circular por Montserrat hasta la ermita de Sant Joan y la Cruz de Sant Miquel. 7 km, fácil, con transporte público desde Barcelona.", "image": "https://kartoonberg-spec.github.io/cumbregear/img/paisajes/montserrat.jpg", "author": {"@type": "Person", "name": "Marcos Vidal"}, "publisher": {"@type": "Organization", "name": "CumbreGear"}, "dateModified": "2026-06-14"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Montserrat — Ruta Sant Joan y Creu de Sant Miquel", "description": "Guía orientativa de una ruta por Montserrat. Verifica transporte, acceso, trazado, meteorología y avisos oficiales antes de salir.", "image": "https://kartoonberg-spec.github.io/cumbregear/img/paisajes/montserrat.jpg", "author": {"@type": "Organization", "name": "CumbreGear"}, "publisher": {"@type": "Organization", "name": "CumbreGear"}, "dateModified": "2026-09-13"}</script>
 </head>
 <body>
 <nav>
@@ -152,9 +156,9 @@ footer a{color:rgba(255,255,255,.5)}
 <p>Sendero bien marcado entre formaciones rocosas espectaculares. La Creu de Sant Miquel (1.025m) es el punto más alto de la ruta y el mejor mirador del macizo. En días claros se ve desde el Pirineo hasta el Mediterráneo.</p>
 <h3>Tramo 3 — Creu → Monasterio (45 min)</h3>
 <p>Descenso por diferente itinerario bordeando las agujas características de Montserrat. El camino pasa junto a varios eremitorios medievales excavados en la roca. Cierre del círculo en el Monasterio.</p>
-<div class="tip">💡 Madruga. Montserrat recibe más de 3 millones de visitantes al año. Antes de las 9h tendrás los senderos prácticamente para ti solo y las mejores luces para fotografiar las agujas.</div>
+<div class="tip">💡 Madrugar puede ayudar a evitar parte de la afluencia y el calor. Consulta horarios de transporte, restricciones y avisos antes de desplazarte.</div>
 <h2>Equipamiento recomendado</h2>
-<div class="winner-box"><div class="wb-icon wb-g">🥾</div><div class="wb-info"><strong>Merrell Moab 3 GTX — perfecta para Montserrat</strong><span>Suela Vibram · Gore-Tex · Cómoda desde el primer día · Desde 90€</span></div><a href="https://www.amazon.es/s?k=Merrell+Moab+3+GTX" rel="sponsored noopener" target="_blank"><button class="wb-btn">Ver en Amazon →</button></a></div>
+<div class="winner-box"><div class="wb-icon wb-g">🥾</div><div class="wb-info"><strong>Calzado cómodo con suela adecuada</strong><span>Prioriza ajuste, agarre y experiencia previa con el calzado.</span></div></div>
 <div class="checklist">
   <div class="checklist-item">🥾 Calzado con suela de agarre</div>
   <div class="checklist-item">💧 Agua 1.5L por persona</div>
