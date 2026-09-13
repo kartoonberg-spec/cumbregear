@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kartoonberg-spec.github.io/cumbregear/sitemap.xml
