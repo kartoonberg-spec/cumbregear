@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CumbreGear — Equipamiento de Senderismo y Montaña</title>
-<meta name="description" content="Guía experta de equipamiento para senderismo y montaña. Análisis honestos, comparativas reales y los mejores productos probados en ruta.">
+<meta name="description" content="Guías prácticas de equipamiento, comparativas editoriales y rutas de montaña para elegir y preparar cada salida con criterio.">
 <link rel="canonical" href="https://kartoonberg-spec.github.io/cumbregear/">
 <meta property="og:title" content="CumbreGear — Equipamiento de Senderismo y Montaña">
 <meta property="og:description" content="Guía experta de equipamiento para senderismo y montaña. Análisis honestos, comparativas y rutas.">
@@ -29,10 +29,13 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
 a{color:inherit;text-decoration:none}
 button{font-family:var(--sans);cursor:pointer}
 img{display:block;max-width:100%}
+.skip-link{position:fixed;top:.5rem;left:.5rem;z-index:999;background:#fff;color:var(--green-dark);padding:.65rem 1rem;border-radius:var(--radius-sm);transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+:focus-visible{outline:3px solid #f3a66f;outline-offset:3px}
 .container{max-width:1140px;margin:0 auto;padding:0 1rem}
 .btn{display:inline-flex;align-items:center;gap:5px;padding:9px 18px;border-radius:var(--radius-sm);font-size:.82rem;font-weight:600;border:none;transition:var(--trans)}
 .btn-primary{background:var(--orange);color:#fff}.btn-primary:hover{background:#c96b2a}
@@ -107,6 +110,8 @@ nav{background:rgba(18,26,18,.97);position:sticky;top:0;z-index:200;backdrop-fil
 .trust-inner{display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:500;color:var(--muted)}
 .trust-item svg{width:14px;height:14px;stroke:var(--green)}
+.editorial-note{max-width:780px;margin:1.25rem auto 0;padding:1rem 1.15rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:.82rem;color:var(--muted)}
+.editorial-note strong{color:var(--text)}
 
 /* CATBAR */
 .catbar{background:var(--white);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
@@ -310,8 +315,10 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
   .checklist{grid-template-columns:1fr}
 }
 </style>
+<style>@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}</style>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- NAV -->
 <nav>
@@ -347,6 +354,7 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
   </div>
 </nav>
 
+<main id="contenido">
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">
@@ -357,24 +365,24 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
   </div>
   <div class="container hero-inner">
     <div class="hero-content">
-      <div style="margin-bottom:.8rem"><span class="tag tag-white">⛰ Guía experta de montaña</span></div>
+      <div style="margin-bottom:.8rem"><span class="tag tag-white">⛰ Guías de montaña y equipamiento</span></div>
       <h1>Equípate para<br>conquistar cada <em>cima</em></h1>
-      <p>Análisis honestos, comparativas reales y el mejor equipamiento probado sobre el terreno. Tu guía de confianza antes de cada salida a la montaña.</p>
+      <p>Comparativas editoriales, guías prácticas y rutas para ayudarte a preparar cada salida. Indicamos qué información procede de fabricantes y evitamos presentar como pruebas propias lo que no está documentado.</p>
       <div class="hero-btns">
         <button class="btn btn-primary" onclick="navScroll('productos')">Ver equipamiento top →</button>
         <button class="btn btn-ghost" onclick="navScroll('rutas')">Explorar rutas</button>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><strong>+350</strong><span>Productos analizados</span></div>
-        <div class="hero-stat"><strong>12K</strong><span>Senderistas confían</span></div>
-        <div class="hero-stat"><strong>5 años</strong><span>En ruta</span></div>
+        <div class="hero-stat"><strong>8</strong><span>Guías publicadas</span></div>
+        <div class="hero-stat"><strong>5</strong><span>Rutas detalladas</span></div>
+        <div class="hero-stat"><strong>2026</strong><span>Edición revisada</span></div>
       </div>
     </div>
     <div class="hero-cards">
-      <div class="hero-card" onclick="openArticle('botas')"><div class="hci hc-g">🥾</div><div class="hcb"><strong>Mejores botas 2026</strong><span>14 modelos probados en campo</span></div><span class="hc-link">Ver →</span></div>
+      <div class="hero-card" onclick="openArticle('botas')"><div class="hci hc-g">🥾</div><div class="hcb"><strong>Botas de trekking 2026</strong><span>5 modelos comparados por uso</span></div><span class="hc-link">Ver →</span></div>
       <div class="hero-card" onclick="openArticle('mochilas')"><div class="hci hc-o">🎒</div><div class="hcb"><strong>Mochilas de trekking</strong><span>Osprey vs Deuter comparados</span></div><span class="hc-link">Ver →</span></div>
-      <div class="hero-card" onclick="openArticle('gps')"><div class="hci hc-b">🧭</div><div class="hcb"><strong>GPS para montaña</strong><span>Garmin vs Suunto — duelo 2026</span></div><span class="hc-link">Ver →</span></div>
-      <div class="hero-card" onclick="openArticle('calzado_principiantes')"><div class="hci" style="background:rgba(139,94,60,.35)">👟</div><div class="hcb"><strong>Botas para principiantes</strong><span>Las mejores opciones hasta 100€</span></div><span class="hc-link">Ver →</span></div>
+      <div class="hero-card" onclick="openArticle('gps')"><div class="hci hc-b">🧭</div><div class="hcb"><strong>GPS para montaña</strong><span>Garmin y Suunto, función por función</span></div><span class="hc-link">Ver →</span></div>
+      <div class="hero-card" onclick="openArticle('calzado_principiantes')"><div class="hci" style="background:rgba(139,94,60,.35)">👟</div><div class="hcb"><strong>Botas para principiantes</strong><span>Opciones asequibles y criterios de ajuste</span></div><span class="hc-link">Ver →</span></div>
       <div class="hero-card" onclick="openArticle('longtail_camino')"><div class="hci" style="background:rgba(24,95,165,.25)">🛤</div><div class="hcb"><strong>Equipo para el Camino de Santiago</strong><span>Todo lo imprescindible</span></div><span class="hc-link">Ver →</span></div>
     </div>
   </div>
@@ -383,11 +391,11 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <!-- TRUST -->
 <div class="trust-bar">
   <div class="container trust-inner">
-    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Análisis sin publicidad</div>
-    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Probado sobre el terreno</div>
-    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>Actualizado mensualmente</div>
+    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Criterios explicados</div>
+    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Fuentes diferenciadas</div>
+    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg>Fecha de revisión visible</div>
     <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>Opinión independiente</div>
-    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Precios actualizados</div>
+    <div class="trust-item"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Precios orientativos</div>
   </div>
 </div>
 
@@ -409,41 +417,41 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <section class="section section-alt" id="guias">
   <div class="container">
     <div class="sec-hd">
-      <div><h2 class="sec-title">Guías de <span style="color:var(--green)">compra</span></h2><p class="sec-sub">Análisis editoriales escritos tras prueba real en ruta</p></div>
+      <div><h2 class="sec-title">Guías de <span style="color:var(--green)">compra</span></h2><p class="sec-sub">Comparativas editoriales basadas en características, uso previsto y ajuste</p></div>
       <a class="see-all">Ver todas →</a>
     </div>
     <div class="articles-grid" id="articlesGrid">
       <div class="article-card" data-cat="guia calzado" onclick="openArticle('botas')">
         <div class="article-thumb"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=260&fit=crop&auto=format" alt="Botas de trekking"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Guía de compra</span></div>
-        <div class="article-body"><h3>Las 10 mejores botas de trekking de 2026 — análisis tras 500 km</h3><p>14 modelos probados en barro, roca y nieve. Solo 10 superaron la prueba real.</p><div class="article-meta"><span>8 min · Mayo 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>5 botas de trekking para distintos tipos de ruta en 2026</h3><p>Comparación de ajuste, membrana, suela, peso declarado y uso recomendado.</p><div class="article-meta"><span>8 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="comparativa mochilas" onclick="openArticle('mochilas')">
         <div class="article-thumb"><img src="https://images.unsplash.com/photo-1501554728187-ce583db33af7?w=400&h=260&fit=crop&auto=format" alt="Mochila montaña"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Comparativa</span></div>
-        <div class="article-body"><h3>Osprey Atmos vs Deuter Aircontact — cuál comprar en 2026</h3><p>Frente a frente en peso, ventilación y durabilidad tras 200 km de ruta.</p><div class="article-meta"><span>6 min · Abril 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Osprey Atmos vs Deuter Aircontact — qué cambia en 2026</h3><p>Comparación de capacidad, peso declarado, acceso, ventilación y garantía.</p><div class="article-meta"><span>6 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="comparativa gps" onclick="openArticle('gps')">
         <div class="article-thumb"><img src="img/relojes/garminsun.jpg" alt="Reloj GPS montaña"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Comparativa GPS</span></div>
-        <div class="article-body"><h3>Garmin Fenix 8 vs Suunto Race — el duelo definitivo 2026</h3><p>Batería, mapas y precisión. Cuál gana en cada situación real de montaña.</p><div class="article-meta"><span>10 min · Abril 2026</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Garmin Fenix 8 vs Suunto Race — comparativa para montaña</h3><p>Batería declarada, mapas, navegación y perfiles deportivos según cada fabricante.</p><div class="article-meta"><span>10 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="longtail calzado" onclick="openArticle('calzado_principiantes')">
         <div class="article-thumb"><img src="img/3boas.jpg" alt="Botas principiantes"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Long tail</span></div>
-        <div class="article-body"><h3>Mejor bota de trekking para principiantes por menos de 100€</h3><p>Sin gastar de más: los 4 modelos que mejor rendimiento ofrecen a precio asequible.</p><div class="article-meta"><span>5 min · Mayo 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Botas de trekking para principiantes: cómo elegir sin gastar de más</h3><p>Tres opciones y los criterios de ajuste, sujeción y terreno que importan.</p><div class="article-meta"><span>5 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="longtail" onclick="openArticle('longtail_camino')">
         <div class="article-thumb"><img src="img/paisajes/elcaminodesantiago.jpg" alt="Camino de Santiago"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Long tail</span></div>
-        <div class="article-body"><h3>Qué llevar para el Camino de Santiago — equipamiento imprescindible</h3><p>Lista completa de equipo para el Camino Francés con enlaces de compra directa.</p><div class="article-meta"><span>7 min · Marzo 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Qué llevar para el Camino de Santiago — equipamiento esencial</h3><p>Una lista adaptable al recorrido, la estación y tu forma de caminar.</p><div class="article-meta"><span>7 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="guia seguridad" onclick="openArticle('botiquin')">
         <div class="article-thumb"><img src="img/botiquin.jpg" alt="Botiquín montaña"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Guía de seguridad</span></div>
-        <div class="article-body"><h3>Botiquín de primeros auxilios para senderismo — qué incluir en 2025</h3><p>Lo mínimo imprescindible para salir a la montaña con garantías. Con lista de compra.</p><div class="article-meta"><span>6 min · Febrero 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Botiquín de primeros auxilios para senderismo — qué incluir</h3><p>Material básico que debes adaptar a la actividad, el grupo y tus conocimientos.</p><div class="article-meta"><span>6 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="guia calzado" onclick="openArticle('elegir_botas')">
         <div class="article-thumb"><img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=260&fit=crop&auto=format" alt="Elegir botas"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Guía</span></div>
-        <div class="article-body"><h3>Cómo elegir botas de montaña — guía completa para no equivocarse</h3><p>Altura, membrana, suela y horma: los 4 factores que nadie te explica en la tienda.</p><div class="article-meta"><span>9 min · Enero 2025</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Cómo elegir botas de montaña — cuatro criterios prácticos</h3><p>Altura, membrana, suela y horma explicadas según terreno y uso.</p><div class="article-meta"><span>9 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
       <div class="article-card" data-cat="guia" onclick="openArticle('que_llevar')">
         <div class="article-thumb"><img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=400&h=260&fit=crop&auto=format" alt="Qué llevar mochila"><div class="article-thumb-overlay"></div><span class="article-thumb-tag tag tag-white">Guía esencial</span></div>
-        <div class="article-body"><h3>Qué llevar en la mochila en una ruta de un día — lista completa</h3><p>La lista definitiva que usamos nosotros en cada salida. Nada sobra, nada falta.</p><div class="article-meta"><span>5 min · Diciembre 2024</span><span class="read-more">Leer →</span></div></div>
+        <div class="article-body"><h3>Qué llevar en la mochila en una ruta de un día</h3><p>Lista base que debes adaptar a recorrido, estación, meteorología y grupo.</p><div class="article-meta"><span>5 min · Revisado septiembre 2026</span><span class="read-more">Leer →</span></div></div>
       </div>
     </div>
   </div>
@@ -453,19 +461,20 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <section class="section" id="productos">
   <div class="container">
     <div class="sec-hd">
-      <div><h2 class="sec-title">Productos <span style="color:var(--green)">mejor valorados</span></h2><p class="sec-sub">Selección actualizada · Precios verificados en Amazon · Mayo 2025</p></div>
+      <div><h2 class="sec-title">Productos <span style="color:var(--green)">destacados</span></h2><p class="sec-sub">Selección editorial · Los precios y la disponibilidad pueden cambiar</p></div>
       <a class="see-all">Ver todo →</a>
     </div>
     <div class="products-grid">
-      <div class="product-card"><div class="product-img"><img src="img/botas/salomonXultra.jpg" alt="Salomon X Ultra 4 GTX"><span class="badge b-ed">Elección editor</span></div><div class="product-body"><h4>Salomon X Ultra 4 GTX</h4><div class="prod-rating"><span class="stars">★★★★★</span><span class="rc">(1.842)</span></div><div class="prod-price"><span class="price">139€</span><span class="price-old">169€</span></div><a href="https://www.amazon.es/dp/B08XWHDRDS?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
-      <div class="product-card"><div class="product-img"><img src="img/ospreyatmos1.jpg" alt="Osprey Atmos AG 65"><span class="badge b-top">Más vendido</span></div><div class="product-body"><h4>Osprey Atmos AG 65</h4><div class="prod-rating"><span class="stars">★★★★★</span><span class="rc">(3.210)</span></div><div class="prod-price"><span class="price">360€</span></div><a href="https://www.amazon.es/dp/B09JXNNKRY?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
-      <div class="product-card"><div class="product-img"><img src="img/relojes/garmin.jpg" alt="Garmin Fenix 8"><span class="badge b-pr">Premium</span></div><div class="product-body"><h4>Garmin Fenix 8</h4><div class="prod-rating"><span class="stars">★★★★★</span><span class="rc">(987)</span></div><div class="prod-price"><span class="price">699€</span><span class="price-old">725€</span></div><a href="https://www.amazon.es/dp/B0DC6ZD31R?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
-      <div class="product-card"><div class="product-img"><img src="img/Montane Phase XT Jacket.jpg" alt="Chaqueta montaña"><span class="badge b-sale">-30%</span></div><div class="product-body"><h4>Montane Phase XT</h4><div class="prod-rating"><span class="stars">★★★★☆</span><span class="rc">(654)</span></div><div class="prod-price"><span class="price">334€</span><span class="price-old">380€</span></div><a href="https://www.amazon.es/dp/B0B6GHBS53?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
-      <div class="product-card"><div class="product-img"><img src="img/tiendas/hubbahubba2.jpg" alt="MSR Hubba Hubba"><span class="badge b-ed">Ultraligera</span></div><div class="product-body"><h4>MSR Hubba Hubba 2P</h4><div class="prod-rating"><span class="stars">★★★★★</span><span class="rc">(1.103)</span></div><div class="prod-price"><span class="price">449,84€</span></div><a href="https://www.amazon.es/dp/B00G7H9CAY?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
-      <div class="product-card"><div class="product-img"><img src="img/frontalesLed/Petzl Actik Core 600lm.jpg" alt="Petzl Actik Core headlamp displayed on a neutral background"><span class="badge b-top">Top ventas</span></div><div class="product-body"><h4>Petzl Actik Core 600lm</h4><div class="prod-rating"><span class="stars">★★★★★</span><span class="rc">(2.340)</span></div><div class="prod-price"><span class="price">60,95€</span><span class="price-old">70€</span></div><a href="https://www.amazon.es/dp/B0FHKTNR6T?tag=TU-TAG-AFILIADO" target="_blank" class="amz-btn">Ver características →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/botas/salomonXultra.jpg" alt="Salomon X Ultra 4 GTX" loading="lazy"><span class="badge b-ed">Senderismo</span></div><div class="product-body"><h4>Salomon X Ultra 4 GTX</h4><div class="prod-rating"><span class="rc">Membrana impermeable · terreno mixto</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=Salomon+X+Ultra+4+GTX" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/ospreyatmos1.jpg" alt="Osprey Atmos AG 65" loading="lazy"><span class="badge b-top">Gran capacidad</span></div><div class="product-body"><h4>Osprey Atmos AG 65</h4><div class="prod-rating"><span class="rc">65 litros · ajuste regulable</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=Osprey+Atmos+AG+65" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/relojes/garmin.jpg" alt="Garmin Fenix 8" loading="lazy"><span class="badge b-pr">Navegación</span></div><div class="product-body"><h4>Garmin Fenix 8</h4><div class="prod-rating"><span class="rc">Mapas · perfiles multideporte</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=Garmin+Fenix+8" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/Montane Phase XT Jacket.jpg" alt="Chaqueta Montane Phase XT" loading="lazy"><span class="badge b-sale">Impermeable</span></div><div class="product-body"><h4>Montane Phase XT</h4><div class="prod-rating"><span class="rc">Chaqueta técnica de protección</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=Montane+Phase+XT" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/tiendas/hubbahubba2.jpg" alt="Tienda MSR Hubba Hubba 2P" loading="lazy"><span class="badge b-ed">2 plazas</span></div><div class="product-body"><h4>MSR Hubba Hubba 2P</h4><div class="prod-rating"><span class="rc">Tienda ligera de tres estaciones</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=MSR+Hubba+Hubba+2P" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
+      <div class="product-card"><div class="product-img"><img src="img/frontalesLed/Petzl Actik Core 600lm.jpg" alt="Linterna frontal Petzl Actik Core 600 lm" loading="lazy"><span class="badge b-top">Iluminación</span></div><div class="product-body"><h4>Petzl Actik Core 600 lm</h4><div class="prod-rating"><span class="rc">Frontal recargable</span></div><div class="prod-price"><span class="price">Consultar precio</span></div><a href="https://www.amazon.es/s?k=Petzl+Actik+Core+600" rel="sponsored noopener" target="_blank" class="amz-btn">Ver disponibilidad →</a></div></div>
     </div>
   </div>
 </section>
+<div class="container"><p class="editorial-note"><strong>Cómo elaboramos las guías:</strong> comparamos especificaciones publicadas, ajuste, tipo de terreno y necesidades de uso. Cuando no existe una prueba propia documentada, no atribuimos kilómetros, meses de uso ni puntuaciones de laboratorio. Los precios son orientativos y deben comprobarse en la tienda.</p></div>
 
 <!-- FEATURE BANNER -->
 <div class="container">
@@ -497,10 +506,11 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
       <div class="ruta-card" onclick="openArticle('ruta_europa')"><div class="ruta-thumb"><img src="img/paisajes/picosdeeuropa.jpg" alt="Picos Europa"><div class="ruta-thumb-ov"></div><span class="diff diff-easy" style="position:absolute;bottom:7px;left:7px">Fácil</span></div><div class="ruta-body"><h4>Picos de Europa</h4><p class="ruta-meta">9 km · 420m · 4h</p></div></div>
       <div class="ruta-card" onclick="openArticle('ruta_mulhacen')"><div class="ruta-thumb"><img src="img/paisajes/mulhacen.jpg" alt="Mulhacén"><div class="ruta-thumb-ov"></div><span class="diff diff-hard" style="position:absolute;bottom:7px;left:7px">Difícil</span></div><div class="ruta-body"><h4>Mulhacén — S. Nevada</h4><p class="ruta-meta">18 km · 1.900m · 9h</p></div></div>
       <div class="ruta-card" onclick="openArticle('ruta_montserrat')"><div class="ruta-thumb"><img src="img/paisajes/montserrat.jpg" alt="Montserrat"><div class="ruta-thumb-ov"></div><span class="diff diff-easy" style="position:absolute;bottom:7px;left:7px">Fácil</span></div><div class="ruta-body"><h4>Montserrat — Cataluña</h4><p class="ruta-meta">7 km · 310m · 3h</p></div></div>
-      <div class="ruta-card" onclick="openArticle('ruta_ordesa')"><div class="ruta-thumb"><img src="img/paisajes/ordesa.jpg " alt="Ordesa"><div class="ruta-thumb-ov"></div><span class="diff diff-med" style="position:absolute;bottom:7px;left:7px">Media</span></div><div class="ruta-body"><h4>Ordesa — Faja de Pelay</h4><p class="ruta-meta">12 km · 850m · 6h</p></div></div>
+      <div class="ruta-card" onclick="openArticle('ruta_ordesa')"><div class="ruta-thumb"><img src="img/paisajes/ordesa.jpg" alt="Ordesa"><div class="ruta-thumb-ov"></div><span class="diff diff-med" style="position:absolute;bottom:7px;left:7px">Media</span></div><div class="ruta-body"><h4>Ordesa — Faja de Pelay</h4><p class="ruta-meta">12 km · 850m · 6h</p></div></div>
     </div>
   </div>
 </section>
+</main>
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
@@ -524,7 +534,7 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
     <div class="footer-col"><h5>Contenido</h5><ul><li><a href="#" onclick="navScroll('guias');return false">Guías de compra</a></li><li><a href="#" onclick="navScroll('guias');return false">Comparativas</a></li><li><a href="#" onclick="navScroll('rutas');return false">Rutas de montaña</a></li><li><a href="#" onclick="openArticle('nosotros');return false">Sobre nosotros</a></li></ul></div>
     <div class="footer-col"><h5>Legal</h5><ul><li><a href="#" onclick="openArticle('nosotros');return false">Sobre nosotros</a></li><li><a href="#" onclick="openArticle('afiliados');return false">Aviso de afiliados</a></li><li><a href="#" onclick="openArticle('privacidad');return false">Política de privacidad</a></li><li><a href="#" onclick="openArticle('legal');return false">Aviso legal</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><div class="container"><span class="aff-note">Participante en el Programa de Afiliados de Amazon EU — Las compras a través de nuestros enlaces generan una pequeña comisión sin coste adicional para ti</span><br>© <span id="footerYear">2025</span> CumbreGear · Todos los derechos reservados</div></div>
+  <div class="footer-bottom"><div class="container"><span class="aff-note">Algunos enlaces pueden ser de afiliado. El precio no cambia para ti y la posible comisión no determina el criterio editorial.</span><br>© <span id="footerYear">2026</span> CumbreGear · Todos los derechos reservados</div></div>
 </footer>
 
 <!-- MODAL -->
@@ -538,15 +548,15 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <!-- ══════════════ TEMPLATES ══════════════ -->
 
 <template id="art-botas">
-<div class="art-hero"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=460&fit=crop&auto=format" alt="Botas trekking"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">🥾 Guía de compra · Calzado</span><h1 class="art-h1">Los 5 mejores calzados de trekking de 2026 — análisis tras 500 km en ruta</h1><div class="art-meta"><span>Por Marcos Vidal · Guía UIAGM</span><span>Mayo 2025</span><span>⏱ 8 min</span><span>14 modelos probados</span></div></div></div>
+<div class="art-hero"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=460&fit=crop&auto=format" alt="Botas trekking"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">🥾 Guía de compra · Calzado</span><h1 class="art-h1">5 calzados de trekking para distintos tipos de ruta en 2026</h1><div class="art-meta"><span>Equipo editorial CumbreGear</span><span>Revisado septiembre 2026</span><span>⏱ 8 min</span></div></div></div>
 <div class="art-body">
 <div class="aff-disclaimer">🔗 Artículo con enlaces de afiliado de Amazon. Si compras a través de ellos recibimos una comisión sin coste adicional para ti.</div>
-<p>Si buscas las mejores botas de trekking de 2026, estás en el lugar correcto. He probado 14 modelos durante ocho meses en terrenos muy distintos. Solo cinco merecen tu dinero.</p>
+<p>Esta selección compara cinco modelos con enfoques distintos. La valoración es editorial y se basa en características declaradas, diseño, ajuste previsto y adecuación a cada terreno; no se presenta como una prueba de laboratorio ni como un kilometraje propio.</p>
 <h2>Top 3 — resumen rápido</h2>
 <div class="winner-box"><div class="wb-icon wb-g">🥾</div><div class="wb-info"><strong>🏆 Mejor calidad-precio — Salomon X Ultra pioneer GTX</strong><span>⭐ 4.8/5 · 310g · Gore-Tex · Desde 110€</span></div><a href="https://www.amazon.es/dp/B09N3PKD7S?tag=TU-TAG-AFILIADO" target="_blank"><button class="wb-btn">Ver en Amazon →</button></a></div>
 <div class="winner-box"><div class="wb-icon wb-o">🏔️</div><div class="wb-info"><strong>⭐ Mejor premium — Scarpa Zodiac Plus GTX</strong><span>⭐ 4.9/5 · 340g · Gore-Tex · Desde 280€</span></div><a href="https://www.amazon.es/dp/B01AI047YQ?tag=TU-TAG-AFILIADO" target="_blank"><button class="wb-btn">Ver en Amazon →</button></a></div>
 <div class="winner-box"><div class="wb-icon wb-b">💰</div><div class="wb-info"><strong>💶 Mejor precio — Merrell Moab 3 GTX</strong><span>⭐ 4.6/5 · 395g · Gore-Tex · Desde 90€</span></div><a href="https://www.amazon.es/dp/B098KJT69B?tag=TU-TAG-AFILIADO" target="_blank"><button class="wb-btn">Ver en Amazon →</button></a></div>
-<h2>Comparativa completa</h₂>
+<h2>Comparativa completa</h2>
 <div class="tbl-wrap"><table class="cmp-table"><thead><tr><th>Modelo</th><th>Precio</th><th>Peso</th><th>Membrana</th><th>Nota</th><th>Perfil</th></tr></thead><tbody>
 <tr class="hl"><td><strong>Salomon X Ultra pioneer GTX</strong></td><td>110€</td><td>310g</td><td>Gore-Tex</td><td><span class="sc sc-hi">9.4</span></td><td>Todo terreno</td></tr>
 <tr><td>Scarpa Zodiac Plus GTX</td><td>280€</td><td>340g</td><td>Gore-Tex</td><td><span class="sc sc-hi">9.7</span></td><td>Alta montaña</td></tr>
@@ -570,7 +580,7 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 </template>
 
 <template id="art-mochilas">
-<div class="art-hero"><img src="img/paisajes/paisajemochilas11.jpg" alt="Mochila trekking"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">🎒 Comparativa · Mochilas</span><h1 class="art-h1">Osprey Atmos AG 65 vs Deuter Aircontact Lite 65 — cuál comprar en 2026</h1><div class="art-meta"><span>Por Daniel Pol</span><span>Mayo 2026</span><span>⏱ 6 min</span><span>200 km probadas</span></div></div></div>
+<div class="art-hero"><img src="img/paisajes/paisajemochilas11.jpg" alt="Mochila trekking"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">🎒 Comparativa · Mochilas</span><h1 class="art-h1">Osprey Atmos AG 65 vs Deuter Aircontact Lite 65 — cuál encaja mejor</h1><div class="art-meta"><span>Equipo editorial CumbreGear</span><span>Revisado septiembre 2026</span><span>⏱ 6 min</span></div></div></div>
 <div class="art-body">
 <div class="aff-disclaimer">🔗 Artículo con enlaces de afiliado de Amazon.</div>
 <p>Las dos mochilas más vendidas del mercado en la franja 60-70L. Ambas rondan los 250-300€. He llevado las dos durante más de 200 km para darte una respuesta clara.</p>
@@ -777,19 +787,11 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <div class="art-body">
 <p style="font-size:1rem;font-weight:500;line-height:1.75;border-left:3px solid var(--orange);padding-left:1rem;margin-bottom:1.5rem">CumbreGear nació en 2020 de una frustración concreta: la mayoría de webs de equipamiento estaban escritas por personas que jamás habían pisado una ruta real con el producto en los pies.</p>
 <h2>Quiénes somos</h2>
-<p>Somos Daniel Pol y Elena, senderista de Castellón de la plana con más de quince años recorriendo montañas. Daniel es guía de alta montaña y forma parte de un grupo senderista experimentado. Elena es fisioterapeuta especializada en biomecánica deportiva. Juntos acumulamos más de 40.000 km de rutas y cientos de productos probados sobre el terreno.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:1.25rem 0 1.5rem">
-<div style="position:relative;border-radius:var(--radius);overflow:hidden;height:180px"><img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=500&h=360&fit=crop&auto=format" alt="Daniel" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);padding:.65rem .85rem"><strong style="color:#fff;font-size:.82rem;display:block">Daniel Pol</strong><span style="color:rgba(255,255,255,.65);font-size:.72rem">Senderista experimentado · Co-fundador</span></div></div>
-<div style="position:relative;border-radius:var(--radius);overflow:hidden;height:180px"><img src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=500&h=360&fit=crop&auto=format" alt="Elena" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);padding:.65rem .85rem"><strong style="color:#fff;font-size:.82rem;display:block">Elena Torres</strong><span style="color:rgba(255,255,255,.65);font-size:.72rem">Fisioterapeuta · Co-fundadora</span></div></div>
-</div>
+<p>CumbreGear es un proyecto editorial independiente sobre senderismo y equipamiento. Publicamos comparativas orientativas, diferenciamos las especificaciones del fabricante de la valoración editorial y corregimos los contenidos cuando cambian los datos o detectamos una imprecisión.</p>
+<div class="editorial-note"><strong>Compromiso de transparencia:</strong> no atribuimos titulaciones, profesiones, pruebas de producto, cifras de audiencia ni experiencia acumulada sin documentación. Las correcciones editoriales se reflejan en la fecha de revisión.</div>
 <h2>Cómo nos financiamos</h2>
 <p>CumbreGear participa en el Programa de Afiliados de Amazon. Cuando compras a través de nuestros enlaces, Amazon nos paga una pequeña comisión sin coste adicional para ti. Esta comisión no influye en nuestras recomendaciones. Recomendamos lo que recomendaríamos a un amigo.</p>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:1rem 0 1.5rem">
-<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:var(--orange)">+350</div><div style="font-size:.68rem;color:var(--muted)">Productos</div></div>
-<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:var(--orange)">40K+</div><div style="font-size:.68rem;color:var(--muted)">Km en ruta</div></div>
-<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:var(--orange)">12K</div><div style="font-size:.68rem;color:var(--muted)">Senderistas</div></div>
-<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:.85rem;text-align:center"><div style="font-size:1.5rem;font-weight:700;color:var(--orange)">5 años</div><div style="font-size:.68rem;color:var(--muted)">Publicando</div></div>
-</div>
+<h2>Nuestro criterio editorial</h2><p>Priorizamos el uso previsto, el ajuste, la seguridad y la relación entre prestaciones y coste. No publicamos cifras de experiencia acumulada, audiencia o pruebas propias sin una fuente interna verificable.</p>
 <p>Contacto: <strong>Kartoonberg@hotmail.com</strong></p>
 <div class="verdict"><h3>🏔 Gracias por estar aquí</h3><p>Cada análisis que publicamos tiene como único objetivo ayudarte a tomar la mejor decisión de compra posible.</p><button class="verdict-btn" onclick="closeArticle()">Volver a la web →</button></div>
 </div>
@@ -798,29 +800,29 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <template id="art-privacidad">
 <div class="art-hero" style="height:140px;background:linear-gradient(150deg,#111,#2a2a2a)"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">⚖️ Legal</span><h1 class="art-h1" style="font-size:1.4rem">Política de Privacidad</h1><div class="art-meta"><span>CumbreGear · Mayo 2025</span></div></div></div>
 <div class="art-body" style="font-size:.84rem;line-height:1.8;color:#333">
-<div class="aff-disclaimer">Cumple el RGPD (UE 2016/679) y la LOPDGDD (Ley Orgánica 3/2018).</div>
-<h2>1. Responsable del tratamiento</h2><p><strong>CumbreGear</strong> · privacidad@cumbregear.com · Zaragoza, España</p>
+<div class="aff-disclaimer">Información general sobre privacidad. Debe completarse con los datos reales del responsable antes de activar formularios o analítica.</div>
+<h2>1. Responsable del tratamiento</h2><p><strong>CumbreGear</strong> · contacto: <strong>kartoonberg@hotmail.com</strong>. Los datos identificativos obligatorios del responsable deben completarse antes de activar la captación de suscriptores.</p>
 <h2>2. Datos que recopilamos</h2><p>Correo electrónico (newsletter y contacto), datos de navegación anónimos (Google Analytics) y cookies técnicas.</p>
 <h2>3. Finalidad</h2><p>Envío de newsletter (con tu consentimiento expreso), análisis estadístico anónimo y respuesta a consultas.</p>
 <h2>4. Programa de Afiliados de Amazon</h2><p>Participamos en el Programa de Afiliados de Amazon EU. Amazon puede recopilar datos cuando haces clic en nuestros enlaces. Consulta la <a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ" target="_blank" style="color:var(--green)">Política de Privacidad de Amazon</a>.</p>
-<h2>5. Tus derechos</h2><p>Acceso, rectificación, supresión, limitación, portabilidad y oposición. Escribe a <strong>privacidad@cumbregear.com</strong>. Puedes reclamar ante la <a href="https://www.aepd.es" target="_blank" style="color:var(--green)">AEPD</a>.</p>
+<h2>5. Tus derechos</h2><p>Acceso, rectificación, supresión, limitación, portabilidad y oposición. Escribe a <strong>kartoonberg@hotmail.com</strong>. Puedes reclamar ante la <a href="https://www.aepd.es" rel="noopener" target="_blank" style="color:var(--green)">AEPD</a>.</p>
 <h2>6. Conservación</h2><p>Los datos de suscriptores se eliminan en 30 días tras la baja. Los de contacto, el tiempo legalmente exigible.</p>
 <h2>7. Cookies</h2><p>Cookies propias técnicas (imprescindibles) y Google Analytics (análisis anónimo). Puedes desactivarlas en tu navegador.</p>
-<div class="verdict"><h3>📬 Contacto de privacidad</h3><p>privacidad@cumbregear.com · Zaragoza, España</p><button class="verdict-btn" onclick="closeArticle()">Volver a la web →</button></div>
+<div class="verdict"><h3>📬 Contacto de privacidad</h3><p>kartoonberg@hotmail.com</p><button class="verdict-btn" onclick="closeArticle()">Volver a la web →</button></div>
 </div>
 </template>
 
 <template id="art-legal">
 <div class="art-hero" style="height:140px;background:linear-gradient(150deg,#111,#2a2a2a)"><div class="art-hero-ov"></div><div class="art-hero-text"><span class="tag tag-white" style="margin-bottom:.5rem">⚖️ Legal</span><h1 class="art-h1" style="font-size:1.4rem">Aviso Legal</h1><div class="art-meta"><span>CumbreGear · Mayo 2025</span></div></div></div>
 <div class="art-body" style="font-size:.84rem;line-height:1.8;color:#333">
-<div class="aff-disclaimer">Cumple la LSSI-CE (Ley 34/2002) y la normativa de la UE aplicable.</div>
+<div class="aff-disclaimer">Borrador informativo: faltan datos obligatorios del titular. No debe presentarse como aviso legal definitivo hasta completarlos.</div>
 <h2>1. Datos del titular</h2>
-<div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:.6rem 0 1.25rem"><table style="width:100%;border-collapse:collapse;font-size:.82rem"><tr style="border-bottom:1px solid var(--border)"><td style="padding:.55rem .85rem;font-weight:600;width:35%;background:var(--bg)">Denominación</td><td style="padding:.55rem .85rem">CumbreGear</td></tr><tr style="border-bottom:1px solid var(--border)"><td style="padding:.55rem .85rem;font-weight:600;background:var(--bg)">Domicilio</td><td style="padding:.55rem .85rem">Zaragoza, España</td></tr><tr style="border-bottom:1px solid var(--border)"><td style="padding:.55rem .85rem;font-weight:600;background:var(--bg)">Email</td><td style="padding:.55rem .85rem">legal@cumbregear.com</td></tr><tr><td style="padding:.55rem .85rem;font-weight:600;background:var(--bg)">NIF</td><td style="padding:.55rem .85rem">XXXXXXXXX (sustituir)</td></tr></table></div>
+<p>La identificación fiscal y el domicilio del titular están pendientes de incorporación. Hasta completarlos, esta sección debe considerarse un borrador y no un aviso legal definitivo. Contacto: <strong>kartoonberg@hotmail.com</strong>.</p>
 <h2>2. Propiedad intelectual</h2><p>Todos los contenidos de cumbregear.com son propiedad de CumbreGear y están protegidos por la Ley de Propiedad Intelectual. Se permite la reproducción parcial citando la fuente con enlace activo.</p>
 <h2>3. Exención de responsabilidad</h2><p>Los precios son orientativos y pueden variar. Las recomendaciones de equipamiento son editoriales, no sustituyen el asesoramiento de un guía profesional. La práctica del senderismo y alpinismo conlleva riesgos inherentes. CumbreGear no se hace responsable de accidentes derivados del uso del equipamiento recomendado.</p>
 <h2>4. Programa de Afiliados</h2><p>CumbreGear es participante en el Programa de Afiliados de Amazon EU. Obtenemos comisiones por compras realizadas a través de nuestros enlaces, sin coste adicional para el comprador.</p>
-<h2>5. Legislación aplicable</h2><p>LSSI-CE, RGPD, LOPDGDD, LPI. Jurisdicción: Juzgados de Zaragoza.</p>
-<div class="verdict"><h3>📬 Contacto legal</h3><p>legal@cumbregear.com · <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--orange)">Plataforma ODR UE</a></p><button class="verdict-btn" onclick="closeArticle()">Volver a la web →</button></div>
+<h2>5. Legislación aplicable</h2><p>La normativa aplicable dependerá de la identidad y domicilio reales del titular y de las funciones que se activen en el sitio.</p>
+<div class="verdict"><h3>📬 Contacto legal</h3><p>kartoonberg@hotmail.com</p><button class="verdict-btn" onclick="closeArticle()">Volver a la web →</button></div>
 </div>
 </template>
 
@@ -837,7 +839,7 @@ footer{background:#111;color:rgba(255,255,255,.42);font-size:.76rem}
 <h2>¿Influye en nuestras recomendaciones?</h2><p>No. Recomendamos lo que recomendaríamos a un amigo, con independencia de la comisión que genere. En muchos artículos recomendamos el producto más barato porque es genuinamente el mejor para ese uso.</p>
 <h2>Nuestros principios editoriales</h2>
 <div style="background:#111f14;color:#fff;border-radius:var(--radius);padding:1rem 1.25rem;margin:.75rem 0 1.25rem;display:flex;flex-direction:column;gap:.45rem">
-<div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.8)"><span style="color:var(--orange)">→</span>Probamos todos los productos antes de recomendarlos.</div>
+<div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.8)"><span style="color:var(--orange)">→</span>Indicamos cuándo una valoración procede de especificaciones y cuándo existe experiencia propia documentada.</div>
 <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.8)"><span style="color:var(--orange)">→</span>Incluimos siempre puntos débiles, no solo fortalezas.</div>
 <div style="display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.8)"><span style="color:var(--orange)">→</span>Nunca recibimos pagos de fabricantes para posicionar un producto.</div>
 </div>
