@@ -15,7 +15,7 @@
 // ── CONFIGURACIÓN ──────────────────────────────────────────
 const SUPABASE_URL  = 'https://pfnzvbslhpfvzkuojrrq.supabase.co';   // ← cambia esto
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmbnp2YnNsaHBmdnprdW9qcnJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMDgwMTksImV4cCI6MjA5Njc4NDAxOX0.5JRCnCLV';
-const AFFILIATE_TAG = 'TU-TAG-AFILIADO';                    // ← cambia esto
+const AFFILIATE_TAG = ''; // Añadir únicamente cuando exista un identificador real del programa
 
 // ── CLIENTE SUPABASE (sin SDK, fetch nativo) ───────────────
 const sb = {
@@ -228,12 +228,10 @@ function mostrarAvgMsg(slug, texto) {
 
 function normalizarTagsAfiliado() {
   document.querySelectorAll('a[href*="amazon.es"]').forEach(a => {
-    if (a.href.includes('TU-TAG-AFILIADO') || !a.href.includes('tag=')) {
-      // Si no tiene tag o tiene el placeholder, añadir/reemplazar
-      const url = new URL(a.href);
-      url.searchParams.set('tag', AFFILIATE_TAG);
-      a.href = url.toString();
-    }
+    const url = new URL(a.href);
+    if (url.searchParams.get('tag') === 'TU-TAG-AFILIADO') url.searchParams.delete('tag');
+    if (AFFILIATE_TAG) url.searchParams.set('tag', AFFILIATE_TAG);
+    a.href = url.toString();
   });
 }
 
