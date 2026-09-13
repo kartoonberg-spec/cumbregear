@@ -85,9 +85,9 @@ nav{background:rgba(18,26,18,.97);position:sticky;top:0;z-index:200}
 .faq-q{padding:.75rem 1rem;font-weight:600;font-size:.84rem;background:var(--white)}
 .faq-a{padding:.6rem 1rem .75rem;font-size:.82rem;color:#444;border-top:1px solid var(--border)}
 /* Verdict */
-.verdict{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;border-radius:var(--radius);padding:1.25rem;margin:1.5rem 0}
-.verdict h3{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem}
-.verdict p{font-size:.84rem;opacity:.92}
+.verdict{background:var(--white);color:var(--text);border:1px solid var(--border);border-left:5px solid var(--orange);border-radius:var(--radius);padding:1.25rem;margin:1.5rem 0;box-shadow:var(--shadow)}
+.verdict h3{font-family:var(--serif);font-size:1rem;margin-bottom:.5rem;color:var(--green-dark)}
+.verdict p{font-size:.9rem;color:#333;opacity:1}
 .verdict a.btn{margin-top:.85rem}
 /* Rutas relacionadas */
 .rutas-rel{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:1.25rem 0}
@@ -101,6 +101,9 @@ footer{background:#111;color:rgba(255,255,255,.6);font-size:.75rem;padding:2rem 
 footer a{color:rgba(255,255,255,.5)}
 .footer-note{margin-top:.5rem;font-size:.7rem;opacity:.6}
 @media(max-width:640px){
+  .nav-inner{height:auto;flex-direction:column;align-items:flex-start;padding-top:.55rem;padding-bottom:.55rem}
+  .nav-links{width:100%;justify-content:space-between;gap:.5rem;overflow-x:auto}
+  .nav-links a{font-size:.72rem;white-space:nowrap}
   .art-hero{height:260px}
   .checklist{grid-template-columns:1fr}
   .rutas-rel{grid-template-columns:1fr}
